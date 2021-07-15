@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="english">English  :</label><input type="text" id="english">
+<label for="tiengviet">Tiếng Việt  :</label><input type="text" id="tiengviet">
+<button onclick="add()">Thêm</button>
+<hr>
+<label for="findword">Tìm kiếm  :</label><input type="text" id="findword">
+<button onclick="find()">TÌm kiếm</button>
+<p id="output"></p>
+<script>
+  let EngArr = [];
+  let VietArr = [];
+  function add() {
+      let english = (document.getElementById("english").value).toLowerCase();
+      let tiengviet = (document.getElementById("tiengviet").value).toLowerCase();
+
+      EngArr.push(english);
+      VietArr.push(tiengviet);
+      console.log(EngArr)
+      console.log(VietArr)
+  }
+  function find() {
+      let findword = (document.getElementById("findword").value).toLowerCase();
+
+      let x = EngArr.indexOf(findword)
+      console.log(x)
+
+      let y = VietArr.indexOf(findword)
+      console.log(y)
+      if (findword !=""){
+          if(x>=0 && y<0){
+              if (VietArr[x]==''){
+                  document.getElementById("output").innerHTML = "Không có từ tiếng việt tương tự";
+              }else {
+                  document.getElementById('output').innerHTML = VietArr[x];
+              }
+          }else if (x<0 && y>=0){
+              if (VietArr[x]==''){
+                  document.getElementById("output").innerHTML = "Không có từ tiếng anh tương tự";
+              }else {
+                  document.getElementById('output').innerHTML = EngArr[y];
+              }
+          }
+      }  else {
+          document.getElementById("output").innerHTML = "Bạn đang để rỗng!"
+      }
+
+
+      // if(tiengviet==""){
+      //     let x = EngArr.indexOf(english);
+
+      // }else if(english==""){
+      //     let y = VietArr.indexOf(tiengviet);
+
+      // }
+
+
+  }
+</script>
+</body>
+</html>
