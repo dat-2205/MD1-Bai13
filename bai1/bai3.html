@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="char">
+<button onclick="changed()">Changed</button>
+<p id="in"></p>
+<script>
+
+  function changed() {
+    let char = document.getElementById("char").value;
+    let newchar = "";
+    for(i of char){
+      if(i==i.toUpperCase()){
+        i = i.toLowerCase();
+        newchar +=i;
+      }else if((i==i.toLowerCase())){
+        i = i.toUpperCase();
+        newchar +=i;
+      }
+    }
+    document.getElementById("in").innerHTML = newchar;
+  }
+</script>
+</body>
+</html>
