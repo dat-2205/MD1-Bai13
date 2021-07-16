@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="add()">Add</button>
+<p id="display"></p>
+<script>
+  let arr = [];
+
+  function add() {
+    let num = document.getElementById("num").value;
+    let display = "";
+    num = parseInt(num);
+    arr.push(num);
+
+    for (i=(arr.length-1);i>=0; i--){
+      display += arr[i] + "  ;";
+    }
+    document.getElementById("display").innerHTML = display;
+  }
+</script>
+</body>
+</html>

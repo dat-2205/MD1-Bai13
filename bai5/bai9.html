@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="a">
+<button onclick="geta()">Nhập vào mảng a</button>
+<br>
+<input type="number" id="b">
+<button onclick="getb()">Nhập vào mảng  b</button>
+<br>
+<button onclick="ghep()">Ghép</button>
+<p id="ghep"> </p>
+<script>
+    let a = []
+    let b = []
+    let c = []
+    function geta() {
+        let x = parseInt(document.getElementById("a").value)
+        a.push(x)
+        console.log(a)
+    }
+    function getb() {
+        let y = parseInt(document.getElementById("b").value)
+        b.push(y)
+        console.log(b)
+    }
+    function ghep() {
+        for (i=0;i<(a.length+b.length);i++){
+            if (i<a.length){
+                c[i] = a[i]
+            }else{
+                console.log(i)
+                c[i] = b[i-a.length]
+            }
+        }
+        for(i=0;i<c.length;i++){
+            document.getElementById("ghep").innerHTML += c[i] + "  ;";
+        }
+    }
+</script>
+</body>
+</html>

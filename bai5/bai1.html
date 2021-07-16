@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="add()">Add</button>
+<br>
+<label >Mảng vừa nhập :</label><p id="display"></p>
+<label >Số những số lớn hơn hoặc bằng 10 :   </label><p id="greater"></p>
+
+<script>
+    let arr = [];
+    let count = 0;
+
+    function add() {
+        let num = document.getElementById("num").value;
+        let display = "";
+
+        num = parseInt(num);
+        arr.push(num);
+        // In ra số các số lớn hơn hoặc băng 10
+        if(num>=10) {
+            count ++
+        }
+        // In ra mảng vừa nhập
+        for (i=0;i<arr.length; i++){
+            display += arr[i] + "  ;";
+        }
+        document.getElementById("display").innerHTML = display;
+
+        document.getElementById("greater").innerHTML = count ;
+
+    }
+
+</script>
+</body>
+</html>

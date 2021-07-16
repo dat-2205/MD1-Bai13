@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="add()">Add</button>
+<br>
+<input type="number" id="find">
+<button onclick="find()">Find</button>
+<p id="display"></p>
+<p id="check"></p>
+<script>
+  let arr = [];
+
+  function add() {
+    let num = document.getElementById("num").value;
+    let display = "";
+    num = parseInt(num);
+    arr.push(num);
+
+    for (i=0;i<arr.length;i++){
+      display += arr[i] + "  ;";
+    }
+    document.getElementById("display").innerHTML = display;
+  }
+  function find() {
+    let V = document.getElementById("find").value
+    V = parseInt(V)
+    let find = "";
+
+    for(i=0;i<arr.length;i++){
+      if(arr[i]==V) {
+        find += i + " ;"
+      }else {
+        continue
+      }
+    }
+    if(arr.indexOf(V) >= 0){
+      document.getElementById("check").innerHTML = "Số " + V + "là phần tử thứ  " + find;
+    }else {
+      document.getElementById("check").innerHTML = "Số " + V + "không là phần tử  ";
+    }
+
+  }
+</script>
+</body>
+</html>

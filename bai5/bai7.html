@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="add()">Add</button>
+<br>
+<input type="number" id="find">
+<button onclick="del()">Find</button>
+<p id="display"></p>
+<p id="check"></p>
+<script>
+  let arr = [];
+
+  function add() {
+    let num = document.getElementById("num").value;
+    let display = "";
+    num = parseInt(num);
+    arr.push(num);
+
+    for (i=0;i<arr.length;i++){
+      display += arr[i] + "  ;";
+    }
+    document.getElementById("display").innerHTML = display;
+  }
+  function del() {
+    let V = document.getElementById("find").value
+    V = parseInt(V)
+
+    for(i=0;i<arr.length;){
+      if(arr[i]==V) {
+         arr.splice(i,1)
+          continue
+      }else {
+          i++
+      }
+    }
+    document.getElementById("check").innerHTML = arr;
+
+  }
+</script>
+</body>
+</html>
