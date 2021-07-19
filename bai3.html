@@ -15,13 +15,9 @@
 <script>
     let row = 10;
     let col = 10;
-    let i = 0;
-    let j = 0;
     let hienthi = "";
     let isPicked = false;
     let isP1turn = true;
-    let xMove = [];
-    let oMove = [];
 
     drawTable()
     function drawTable(){
@@ -30,7 +26,7 @@
         for (i = 0; i < row;i++){
             hienthi += "<tr>";
             for (j = 0; j<col;j++){
-                hienthi += "<td onclick='changeValue(" + i +','+ j +")' id='" +''+i+j+ "'>";
+                hienthi += `<td onclick=changeValue('${i}${j}') id='${i}${j}' >`;
             }
             hienthi+= "</tr>";
         }
@@ -39,36 +35,31 @@
         console.log(hienthi);
     }
     //Thay doi gia tri cua Ô đã chọn
-    function changeValue(x,y){
-
-        checkDuplicate();
+    function changeValue(id){
+        console.log(id)
+        checkDuplicate(id)
         if (isPicked){
             isPicked = false;
         } else {
             if (isP1turn) {
-                document.getElementById("" + x + y).innerHTML = "x";
-                xMove.push(x,y);
+                document.getElementById(id+"").innerHTML = "x";
                 isP1turn = false;
-
-                sortX();
-
             } else {
-                document.getElementById("" + x + y).innerHTML = "o";
-                oMove.push(x,y);
+                document.getElementById(id +"").innerHTML = "o";
                 isP1turn = true;
-                sortO();
             }
             check();
         }
+    }
         //Kiem tra xem ô đã check hay chưa
-        function checkDuplicate(){
-            if (document.getElementById("" + x + y).innerHTML == "x" || document.getElementById("" + x + y).innerHTML == "o"){
+        function checkDuplicate(id){
+            if (document.getElementById(id+"").innerHTML == "x" || document.getElementById(id+"").innerHTML == "o"){
                 isPicked = true;
             } else {
                 isPicked = false;
             }
         }
-    }
+
 
     function check(){
         for (let i = 0;i<row;i++){
