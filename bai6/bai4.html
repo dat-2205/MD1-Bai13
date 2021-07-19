@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="dem">
+<button onclick="Dem()">Count</button>
+<p id="display"></p>
+<script>
+  function Dem() {
+    let dem =  document.getElementById("dem").value;
+
+    for(var  i in dem) {
+    }
+    document.getElementById("display").innerHTML = parseInt(i)+1;
+  }
+</script>
+</body>
+</html>

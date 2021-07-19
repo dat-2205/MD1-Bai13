@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="addArr">
+<button onclick="Add()">Add</button>
+<p id="display"></p>
+<p id="length"></p>
+<script>
+  let arr = []
+  function Add() {
+    let x = document.getElementById("addArr").value;
+    arr.push(x);
+    document.getElementById("display").innerHTML += x + "  ;";
+    document.getElementById("length").innerHTML = arr.length;
+  }
+</script>
+</body>
+</html>

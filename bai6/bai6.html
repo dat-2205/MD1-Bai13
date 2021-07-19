@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="str">
+<button onclick="Change()">Change</button>
+<p id="display"></p>
+<script>
+  function Change() {
+    let a = document.getElementById("str").value;
+    let b =""
+    for(let i of a) {
+      if(i == '-'){
+        i='_'
+      }
+      b+=i;
+    }
+    document.getElementById("display").innerHTML = b;
+  }
+</script>
+</body>
+</html>
